@@ -10,10 +10,10 @@ class Context(object):
 
 def move_node(source, dest):
     if source is None:
-        return None
+        raise ValueError
+
     first_source = source
     source = source.next
-    dest.next = dest
-    dest = first_source
+    first_source.next = dest
 
-    return Context(first_source, dest)
+    return Context(source, first_source)
