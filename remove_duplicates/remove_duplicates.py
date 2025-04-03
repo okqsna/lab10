@@ -10,15 +10,14 @@ def remove_duplicates(head):
         return head
 
     curr = head
-    unique = []
+    unique = {head.data}
     while curr and curr.next:
-        if curr.next.data not in unique:
-            unique.append(curr.next.data)
-            curr = curr.next
-        else:
+        if curr.next.data in unique:
             curr.next = curr.next.next
+        else:
+            unique.add(curr.next.data)
+            curr = curr.next
     
     return head
             
-
 # 1 -> 1 -> 2
