@@ -9,8 +9,8 @@ def reverse(head):
     if head.next is None:
         return head
 
-    curr = head
-    curr.next = curr
-    
+    curr = reverse(head)
+    curr.next.next = head
+    curr.next = None
     
     return curr
