@@ -24,7 +24,7 @@ def alternating_split(head):
         curr_even.next = curr_odd.next
         curr_even = curr_even.next
 
+
     curr_odd.next = None
-    curr_even.next = None
 
     return Context(odd_head, even_head)
